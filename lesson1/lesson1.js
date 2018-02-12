@@ -6,25 +6,24 @@ nameNode.addEventListener("keyup",
     e.preventDefault();
     if (e.keyCode === returnKey) {
       if (nameNode.value.length > 0) {
-        let sayHelloNode = document.createElement('div');
+        let sayHelloNode  = document.createElement('div');
         let highlightNode = document.createElement('h2');
-        let greetingNode =
-            document.createTextNode(`Hello ${nameNode.value}!`);
+        let greetingNode  = document.createTextNode(`Hello ${nameNode.value}!`);
 
         highlightNode.appendChild(greetingNode);
         sayHelloNode.appendChild(highlightNode);
         sayHelloNode.className = "SayHello";
 
-        let inputNode = document.getElementById("input");
-        let rootNode = document.getElementById("root");
+        let spanNode  = document.getElementById("input");
+        let rootNode  = document.getElementById("root");
         let rootNodes = rootNode.childNodes;
 
         rootNodes.forEach(node => {
-          if (node.className !== "input") {
+          if (node.id !== "input") {
             rootNode.removeChild(node);
           }
         });
-        rootNode.insertBefore(sayHelloNode, inputNode);
+        rootNode.insertBefore(sayHelloNode, spanNode);
         nameNode.value = "";
       }
     }
