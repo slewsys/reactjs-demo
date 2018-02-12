@@ -1,33 +1,33 @@
-const returnKey = 13;
+const RETURN_KEY = 13;
 
-let nameNode = document.getElementById("name");
+let name_node = document.getElementById("name");
 
-nameNode.addEventListener("keyup",
+name_node.addEventListener("keyup",
   e => {
-    if (e.keyCode !== returnKey || nameNode.value.length <= 0) {
+    if (e.keyCode !== RETURN_KEY || name_node.value.length <= 0) {
       return;
     }
 
-    let sayHelloNode  = document.createElement('div');
-    let highlightNode = document.createElement('h2');
-    let greetingNode  = document.createTextNode(`Hello ${nameNode.value}!`);
+    let say_hello_node  = document.createElement('div');
+    let highlight_node = document.createElement('h2');
+    let greeting_node  = document.createTextNode(`Hello ${name_node.value}!`);
 
-    highlightNode.appendChild(greetingNode);
-    sayHelloNode.appendChild(highlightNode);
-    sayHelloNode.className = "SayHello";
+    highlight_node.appendChild(greeting_node);
+    say_hello_node.appendChild(highlight_node);
+    say_hello_node.className = "SayHello";
 
-    let rootNode  = document.getElementById("root");
-    let rootNodes = rootNode.childNodes;
+    let root_node  = document.getElementById("root");
+    let root_node_list = root_node.childNodes;
 
-    rootNodes.forEach(node => {
+    root_node_list.forEach(node => {
       if (node.id !== "input") {
-        rootNode.removeChild(node);
+        root_node.removeChild(node);
       }
     });
 
-    let spanNode  = document.getElementById("input");
+    let span_node  = document.getElementById("input");
 
-    rootNode.insertBefore(sayHelloNode, spanNode);
-    nameNode.value = "";
+    root_node.insertBefore(say_hello_node, span_node);
+    name_node.value = "";
   }
 );
