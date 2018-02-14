@@ -1,7 +1,7 @@
 const RETURN_KEY = 13;
 
-let root_node = document.getElementById("root");
-let span_node = document.createElement("span");
+let root_node  = document.getElementById("root");
+let span_node  = document.createElement("span");
 let label_node = document.createElement("label");
 let input_node = document.createElement("input");
 
@@ -22,7 +22,7 @@ name_node.addEventListener("keyup",
       return;
     }
 
-    let say_hello_node  = document.createElement('div');
+    let say_hello_node = document.createElement('div');
     let highlight_node = document.createElement('h2');
     let greeting_node  = document.createTextNode(`Hello ${name_node.value}!`);
 
