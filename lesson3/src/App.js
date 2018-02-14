@@ -28,7 +28,7 @@ class EnterName extends Component {
       {},
       React.createElement(
         "label",
-        { for: "name" },
+        {},
         "Name:",
         React.createElement(
           "input", {
