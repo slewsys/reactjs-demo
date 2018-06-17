@@ -38,8 +38,14 @@ install_create_react_app ()
 
 initialize_react_app ()
 {
-    if ! $NPX create-react-app "$app_name" || ! cd "$app_name"; then
-        echo "$script_name: $app_name: No such file or directory."
+    if test ! -x "$NPX"; then
+         sudo $YARN global add npx --prefix="$prefix" || exit 1
+    fi
+    if ! $NPX create-react-app "$app_name"; then
+        echo "$script_name: $app_name: No such file or directory"
+        return 1
+    elif  ! cd "$app_name"; then
+        echo "$script_name: $app_name: Permission denied"
         return 1
     fi
     $GIT init .
@@ -47,6 +53,9 @@ initialize_react_app ()
     $YARN start
 }
 
-have_required_utilities || exit 1
-install_create_react_app || exit 1
-initialize_react_app || exit 1
+# Exec only if not sourced.
+if test ."$0" = ."${BASH_SOURCE[0]}"; then
+    have_required_utilities || exit 1
+    install_create_react_app || exit 1
+    initialize_react_app || exit 1
+fi

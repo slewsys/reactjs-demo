@@ -7,9 +7,9 @@
 
 Lessons 3 and 4 were created with [Facebook's Create React App](https://github.com/facebook/create-react-app).
 The following commands must be installed to run them:
-- [nodejs](https://nodejs.org/en/)  (v8.9.4)
-- [yarn](https://github.com/yarnpkg/yarn) (v1.3.2)
-- [npm](https://github.com/npm/npm) (5.6.0)
+- [nodejs](https://nodejs.org/en/)  (v10.4.1)
+- [yarn](https://github.com/yarnpkg/yarn) (v1.7.0)
+- [npm](https://github.com/npm/npm) (5.10.0)
 
 To install dependencies for, e.g., Lesson 3, run:
 ```
