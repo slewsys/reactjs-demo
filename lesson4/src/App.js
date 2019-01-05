@@ -56,6 +56,10 @@ class EnterName extends Component {
 }
 
 class SayHello extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     // return React.createElement(
     //   "div",
@@ -63,13 +67,13 @@ class SayHello extends Component {
     //   React.createElement(
     //     "h2",
     //     {},
-    //     `${this.props.name.length > 0 ? 'Hello ' + this.props.name + '!': ''}`
+    //     `${this.props.name && this.props.name.length > 0 ? 'Hello ' + this.props.name + '!': ''}`
     //   )
     // );
     return (
       <div className="SayHello">
         <h2>
-        {`${this.props.name.length > 0 ? 'Hello ' + this.props.name + '!': ''}`}
+        {`${this.props.name && this.props.name.length > 0 ? 'Hello ' + this.props.name + '!': ''}`}
         </h2>
       </div>
     );
