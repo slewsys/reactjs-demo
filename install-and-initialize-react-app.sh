@@ -34,17 +34,20 @@ EOF
     return 0
 }
 
-install_create_react_app ()
+install_app ()
 {
-    if test -x "$CREATE_REACT_APP"; then
+    declare app=$1
+    declare app_path_var=$(tr 'a-z-' 'A-Z_' <<<$app)
+
+    if eval test -x "\$$app_path_var"; then
         return 0
     fi
-    sudo $YARN global add create-react-app --prefix="$prefix"
+    sudo $YARN global add $app --prefix="$prefix"
 }
 
 initialize_react_app ()
 {
-    if ! $YARN create react-app "$app_name"; then
+    if ! $CREATE_REACT_APP "$app_name"; then
         echo "$script_name: $app_name: No such file or directory"
         return 1
     elif  ! cd "$app_name"; then
@@ -56,7 +59,7 @@ initialize_react_app ()
 # Exec only if not sourced.
 if test ."$0" = ."${BASH_SOURCE[0]}"; then
     have_required_utilities || exit 1
-    install_create_react_app || exit 1
+    install_app create-react-app || exit 1
     initialize_react_app || exit 1
     $YARN start
 fi
