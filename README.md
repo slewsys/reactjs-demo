@@ -4,6 +4,7 @@
 - Lesson 3 is a React app that parallels the JavaScript from Lesson 2.
 - Lesson 4 converts the React DOM API of Lesson 3 to JSX, paralleling the HTML
   markup of Lesson 1.
+- Lesson 5 is a Rails API server that loads a React UI via `react-rails` gem.
 
 Lessons 3 and 4 were created with [Facebook's Create React App](https://github.com/facebook/create-react-app).
 The following commands must be installed to run them:
