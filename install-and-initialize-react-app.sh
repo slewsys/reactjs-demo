@@ -5,7 +5,7 @@
 declare prefix='/usr'
 
 case "$(uname)" in
-    Darwin|*BSD)
+    Darwin|*BSD|Linux)
         prefix='/usr/local'
         ;;
 esac
