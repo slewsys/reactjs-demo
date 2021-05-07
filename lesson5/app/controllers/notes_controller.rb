@@ -14,7 +14,7 @@ p
 
   def update
     @note = Note.find(params[:id])
-    @note.update_attributes(note_params)
+    @note.update(note_params)
 
     render json: @note
   end

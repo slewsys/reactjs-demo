@@ -8,7 +8,7 @@ requests, since both the Rails server and React front end share the
 same origin (i.e., `http://localhost:3001`).
 
 This lesson was initialized with the following commands. Note that
-rails is not invoked without command-line option `--api` so that Rails
+rails is invoked without command-line option `--api` so that Rails
 can create a container (i.e., HTML `div` element via `react_component`
 call) into which the React App is rendered.
 
