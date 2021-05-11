@@ -29,7 +29,6 @@ The following packages must be installed to run them:
 
 - [nodejs](https://nodejs.org/en/)  (v14.6.1)
 - [npm](https://github.com/npm/npm) (7.11.2)
-- [yarn](https://github.com/yarnpkg/yarn) (v2.4.1)
 
 Lesson 5 additionally requires ruby:
 
@@ -50,14 +49,14 @@ fi
 EOF
 source ~/.bashrc
 asdf plugin add nodejs
-node_lts=$(asdf list all nodejs 14. | tail -1)
+node_lts=$(asdf latest nodejs 14.)
 asdf install nodejs $node_lts
 asdf global  nodejs $node_lts
 npm i -g npm
 npm i -g yarn
 asdf reshim nodejs
 asdf plugin add ruby
-ruby_stable=$(asdf list all ruby 3. | grep -v -- '-[a-z]' | tail -1)
+ruby_stable=$(asdf latest ruby 3.)
 asdf install ruby $ruby_stable # ruby builds from source, so be patient
 asdf global  ruby $ruby_stable
 ```
@@ -67,7 +66,6 @@ To check the versions installed:
 ```shell
 node --version
 npm --version
-yarn --version
 ruby --version
 ```
 
@@ -75,7 +73,6 @@ The output should look something like:
 
     v14.16.1
     7.11.2
-    1.22.10
     ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-linux]
 
 Lessons 3 and 4 can now be viewed by `cd`ing to their respective
@@ -83,7 +80,7 @@ directories, and running, e.g.,:
 
 ```
 cd lesson3
-yarn install
+npm i
 yarn start
 ```
 
